@@ -20,7 +20,7 @@ class connexio {
     
     function DB_Open(){
         
-        $this->conn = mysqli_connect($this->host, $this->user, $this->password);
+        $this->conn = mysqli_connect($this->host, $this->user, $this->passwd);
         
         if ($this->conn){
             if (!mysqli_select_db($this->conn, $this->db)){
@@ -44,18 +44,20 @@ class connexio {
     }
     
     function DB_Select($strSelect){
-        
+
          $this->DB_Open();
+         
          $result = mysqli_query($this->conn,$strSelect);
+         
          if($result) {
-             
-             if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($result) > 0) {
                  return ($result);
              } else {
                  return (0);
              }
          } else {
              $result = mysqli_error();
+
          }
          $this->DB_Close();
     }
