@@ -1,8 +1,14 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class autor extends connexio {
+    //Atributs
+    var $aut_idautor;
+    var $aut_autor;
+    
+    //constructor
+    function autor($ruta="../../") {
+        parent::connexio($ruta);
+    }
+}
 
+?>
